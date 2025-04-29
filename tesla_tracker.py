@@ -1,5 +1,5 @@
 import subprocess
-subprocess.run(["playwright", "install", "firefox"], check=True)
+subprocess.run(["playwright", "install", "chromium"], check=True)
 import time
 import os
 from dotenv import load_dotenv
@@ -24,7 +24,7 @@ def send_telegram_message(message):
             print(f"⚠️ Telegram mesajı gönderilemedi: {e}")
 
 def check_inventory(playwright):
-    browser = playwright.firefox.launch(headless=True)
+    browser = playwright.chromium.launch(headless=True)
     page = browser.new_page()
     url = "https://www.tesla.com/tr_TR/inventory/new/my?arrangeby=plh&zip=34093&range=0"
 
