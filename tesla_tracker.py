@@ -1,3 +1,5 @@
+import subprocess
+subprocess.run(["playwright", "install", "firefox"], check=True)
 import time
 import os
 from dotenv import load_dotenv
